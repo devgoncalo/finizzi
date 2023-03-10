@@ -1,0 +1,138 @@
+﻿<ejs-sidebar id="sidebar" width="340px" enableDock dockSize="100px" target=".dock-target" enableGestures="false" border="false">
+
+	<e-content-template>
+	<nav class="sidebar open">
+
+		<header>
+				<div class="image-text profile-wrapper">
+				<span class="image">
+						<img src="~/logo.png" alt="profileImage">
+				</span>
+
+				<div class="text logo-text">
+					<span class="name">Finizzi</span>
+					<span class="profession">Feel Izzi to Track Money</span>
+				</div>
+			</div>
+
+			<i class='bx bx-chevron-right toggle' id="toggle"></i>
+		</header>
+
+		<div class="menu-bar">
+			<div class="menu">
+
+				<li class="search-box">
+					<i class='bx bx-search icon'></i>
+					<input type="text" placeholder="Search...">
+				</li>
+
+				<ul class="menu-links">
+					<li>
+						<a href="/Dashboard">
+							<i class='bx bx-home-alt icon'></i>
+							<span class="text nav-text">Dashboard</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="/Category">
+							<i class='bx bx-bar-chart-alt-2 icon'></i>
+							<span class="text nav-text">Categories</span>
+						</a>
+					</li>
+
+					<li>
+						<a>
+							<i class='bx bx-transfer-alt icon'></i>
+							<span class="text nav-text">Transactions</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class='bx bx-bell icon'></i>
+							<span class="text nav-text">Notifications</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class='bx bx-pie-chart-alt icon'></i>
+							<span class="text nav-text">Analytics</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class='bx bx-wallet icon'></i>
+							<span class="text nav-text">Wallets</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="bottom-content">
+				<li class="">
+					<a href="#">
+						<i class='bx bx-log-out icon'></i>
+						<span class="text nav-text">Logout</span>
+					</a>
+				</li>
+
+				<li class="mode">
+					<div class="sun-moon">
+						<i class='bx bx-moon icon moon'></i>
+						<i class='bx bx-sun icon sun'></i>
+					</div>
+					<span class="mode-text text">Dark mode</span>
+
+					<div class="toggle-switch">
+						<span class="switch"></span>
+					</div>
+				</li>
+
+			</div>
+		</div>
+
+	</nav>
+	</e-content-template>
+
+</ejs-sidebar>
+
+<script>
+	const body = document.querySelector('body'),
+		sidebar = body.querySelector('nav'),
+		toggle = body.querySelector(".toggle"),
+		searchBtn = body.querySelector(".search-box"),
+		modeSwitch = body.querySelector(".toggle-switch"),
+		modeText = body.querySelector(".mode-text");
+
+	toggle.addEventListener("click", () => {
+		sidebar.classList.toggle("close");
+	})
+
+	searchBtn.addEventListener("click", () => {
+		sidebar.classList.remove("close");
+	})
+
+	modeSwitch.addEventListener("click", () => {
+		body.classList.toggle("dark");
+
+		if (body.classList.contains("dark")) {
+			modeText.innerText = "Light mode";
+		} else {
+			modeText.innerText = "Dark mode";
+
+		}
+	});
+</script>
+
+@*<script>
+	document.addEventListener('DOMContentLoaded',function (){
+		dockBar = document.getElementById('sidebar').ej2_instances[0];
+		document.getElementById('toggle').onclick = function () {
+			dockBar.toggle();
+		};
+	});
+</script>*@
