@@ -32,7 +32,7 @@ This project was developed with the following technologies:
 Finizzi is an application where you can control your spending and consumption in an Izzi way, use the application now and see how your last 7 days were!
 
 ### Objective
-Learn and practice the following languages and framworks: ASP.NET Core MVC and Entity Framework.
+Learn and practice the following languages and frameworks: ASP.NET Core MVC and Entity Framework.
 
 ### Note
 This App is focused in the use of the ASP.NET Core MVC and the Entity Framework, despite its unique and beautiful layout the app is built for large devices, and may not be responsive on many medium and small devices.
